@@ -8,17 +8,20 @@ var recipes = {cake: 'cake mix'};
 
 function destructivelyUpdateObjectWithKeyAndValue(obj, key, value){
  obj[key] = value;
- return obj
+ return obj;
 }
 
 function deleteFromObjectByKey(obj, key){
-return delete obj.key;
+var newObj = Object.assign({},obj)
+delete newObj[key];
+return newObj;
 }
 
 function destructivelyDeleteFromObjectByKey(obj, key){
-  var newObj = Object.assign({}, obj);
-  return delete newObj.key;
+ return delete obj[key];
 }
+
+
 
 
 
